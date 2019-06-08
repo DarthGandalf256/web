@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Buttons from './Buttons';
-import Why from './Why';
-import Sponsors from './Sponsors';
+// import Why from './Why';
+// import Sponsors from './Sponsors';
 import { HeadContainerDiv, HeadlineDiv, DescriptionDiv, BottomTextDiv } from './Styled';
 
 const Home = ({ strings }) => (
@@ -17,12 +17,6 @@ const Home = ({ strings }) => (
       </DescriptionDiv>
       <Buttons />
     </HeadContainerDiv>
-    <Why />
-    <Sponsors />
-    <BottomTextDiv>
-      {strings.home_background_by}
-      <a href="//www.artstation.com/artist/mikeazevedo" target="_blank" rel="noopener noreferrer"> Mike Azevedo</a>
-    </BottomTextDiv>
   </div>
 );
 
