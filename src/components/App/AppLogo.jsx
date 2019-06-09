@@ -19,7 +19,7 @@ const StyledLink = styled(Link)`
 const AppLogo = ({ size, strings }) => (
   <StyledLink to="/">
     <span style={{ fontSize: size }}>
-      {`<${strings.app_name}/>`}
+      {`${strings.app_name}`}
     </span>
   </StyledLink>
 );
