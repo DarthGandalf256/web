@@ -344,10 +344,10 @@
 	},
 	{
 		"leagueid": 2469,
-		"ticket": "econ/leagues/subscriptions_coliseum_league_2",
-		"banner": "econ/leagues/subscriptions_coliseum_league_2_ingame",
+		"ticket": "econ/leagues/subscriptions_BePro_league_2",
+		"banner": "econ/leagues/subscriptions_BePro_league_2_ingame",
 		"tier": "amateur",
-		"name": "Coliseum League 2"
+		"name": "BePro League 2"
 	},
 	{
 		"leagueid": 2438,
@@ -1408,10 +1408,10 @@
 	},
 	{
 		"leagueid": 2165,
-		"ticket": "econ/leagues/subscriptions_coliseum_league",
-		"banner": "econ/leagues/subscriptions_coliseum_league_ingame",
+		"ticket": "econ/leagues/subscriptions_BePro_league",
+		"banner": "econ/leagues/subscriptions_BePro_league_ingame",
 		"tier": "amateur",
-		"name": "Coliseum League"
+		"name": "BePro League"
 	},
 	{
 		"leagueid": 2232,
