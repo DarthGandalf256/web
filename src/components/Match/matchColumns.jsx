@@ -117,7 +117,7 @@ export default (strings) => {
         maxFn: true,
         sumFn: true,
         textAlign: 'right',
-        color: '#a2a2a2',
+
         paddingRight: 14,
         width: 21,
       },
@@ -128,7 +128,7 @@ export default (strings) => {
         displayFn: (row, col, field) => field || '-',
         sortFn: true,
         sumFn: true,
-        color: constants.colorGreen,
+        color: 'hsla(123, 25%, 57%, 1)',
         textAlign: 'right',
         paddingLeft: 14,
         paddingRight: 5,
@@ -142,7 +142,7 @@ export default (strings) => {
         displayFn: (row, col, field) => (field || '-'),
         sortFn: true,
         sumFn: true,
-        color: 'rgb(255, 79, 79)',
+        color: 'hsla(0, 80%, 65%, 1)',
         textAlign: 'right',
         paddingLeft: 5,
         paddingRight: 5,
@@ -249,7 +249,6 @@ export default (strings) => {
         paddingLeft: 14,
         paddingRight: 5,
         width: 32,
-        borderLeft: '1px solid rgba(19, 19, 19, 0.2)',
         underline: 'max',
       },
       {
@@ -278,7 +277,6 @@ export default (strings) => {
         paddingLeft: 5,
         paddingRight: 14,
         width: 32,
-        borderRight: '1px solid rgba(19, 19, 19, 0.2)',
         underline: 'max',
       },
       {
@@ -809,6 +807,14 @@ export default (strings) => {
           </div>),
     },
     {
+      displayName: strings.cs_over_time,
+      tooltip: strings.tooltip_cs_over_time,
+      field: 'cs_t',
+      sparkline: true,
+      strings,
+      width: 200,
+    },
+    {
       displayName: strings.th_lane_efficiency,
       tooltip: strings.tooltip_lane_efficiency,
       field: 'lane_efficiency',
@@ -835,6 +841,7 @@ export default (strings) => {
       relativeBars: true,
       sumFn: true,
     },
+
   ];
 
   const unitKillsColumns = [
@@ -1058,10 +1065,13 @@ export default (strings) => {
         if (field) {
           return <TargetsBreakdown field={field} />;
         }
-        // backwards compatibility 2018-03-17
-        return Object.keys(row.damage_inflictor)
-          .sort((a, b) => (row.damage_inflictor[b] - (row.damage_inflictor[a])))
-          .map(inflictor => inflictorWithValue(inflictor, abbreviateNumber((row.damage_inflictor[inflictor]))));
+        if (row.damage_inflictor) {
+          // backwards compatibility 2018-03-17
+          return Object.keys(row.damage_inflictor)
+            .sort((a, b) => (row.damage_inflictor[b] - (row.damage_inflictor[a])))
+            .map(inflictor => inflictorWithValue(inflictor, abbreviateNumber((row.damage_inflictor[inflictor]))));
+        }
+        return null;
       },
     },
     {
